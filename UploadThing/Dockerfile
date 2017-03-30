@@ -16,7 +16,7 @@ RUN mkdir -p /ThingworxStorage /ThingworxBackupStorage
 WORKDIR /opt
 ADD UploadThing_Install.zip .
 RUN mkdir -p UploadThing \
-    && unzip UploadThing_Install-1.2.zip -d UploadThing \
+    && unzip UploadThing_Install.zip -d UploadThing \
     && cd UploadThing \
     && sed -i -e "s/localhost/thingworx/g" UploadThing.properties
 
