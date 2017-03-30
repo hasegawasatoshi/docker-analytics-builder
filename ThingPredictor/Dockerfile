@@ -8,8 +8,12 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
     && apt-get update \
     && apt-get install -y oracle-java8-installer
 
-RUN mkdir -p /ThingworxStorage /ThingworxBackupStorage
+RUN mkdir -p \
+    /ThingworxStorage \
+    /ThingworxBackupStorage \
+    /opt/ThingPredictor/AgentWOrkDir
 
+WORKDIR /opt/ThingPredictor
 ADD prediction-with-analysis.yml .
 ADD thingpredictor.jar .
 RUN sed -i -e "s/localhost/thingworx/g" prediction-with-analysis.yml

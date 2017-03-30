@@ -24,6 +24,7 @@ services:
     volumes:
       - ./ThingworxStorage:/ThingworxStorage
       - ./ThingworxBackupStorage:/ThingworxBackupStorage
+      - ./AgentWorkDir:/opt/ThingPredictor/AgentWorkDir
     depends_on:
       - "thingworx"
     restart: always
