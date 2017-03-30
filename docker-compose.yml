@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  thingworx:
+    build: ./Thingworx
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./ThingworxStorage:/ThingworxStorage
+      - ./ThingworxBackupStorage:/ThingworxBackupStorage
+    restart: always
+
+  uploadthing:
+    build: ./UploadThing
+    volumes:
+      - ./ThingworxStorage:/ThingworxStorage
+      - ./ThingworxBackupStorage:/ThingworxBackupStorage
+    depends_on:
+      - "thingworx"
+    restart: always
+
+  thingpredictor:
+    build: ./ThingPredictor
+    volumes:
+      - ./ThingworxStorage:/ThingworxStorage
+      - ./ThingworxBackupStorage:/ThingworxBackupStorage
+    depends_on:
+      - "thingworx"
+    restart: always
+
