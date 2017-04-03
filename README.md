@@ -29,7 +29,8 @@ Start ThingWorx
 $ docker-compose up -d
 ```
 
-Import ThingWorx ANalytics Extension
+Import ThingWorx Analytics Extension
+Import ThingWorx Analytics extension by referrencing `ThingWorx Analytics Extension Installation Guide`.
 
 Stop ThingWorx
 ```
