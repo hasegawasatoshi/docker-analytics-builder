@@ -9,7 +9,7 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
     && apt-get install -y oracle-java8-installer
 
 ENV TOMCAT_MAJOR 8
-ENV TOMCAT_VERSION 8.0.42
+ENV TOMCAT_VERSION 8.0.43
 ENV TOMCAT_TGZ_URL http://www-eu.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 WORKDIR /tmp
